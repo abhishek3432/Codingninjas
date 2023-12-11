@@ -4,22 +4,20 @@ using namespace std;
 int nthfibonacci(int nth)
 {
         int ans;
-        int pre=0;
+        int pre=1;
         int cur=1;        
-        if(nth==1)
+        if(nth==1||nth==2)
                 return 1;
-        else if(nth==2)
-                return 1;
-             else
-             {
-                for(int i=2; i<=nth; i++)
-                {
-                        ans=pre+cur;
-                        pre=cur;
-                        cur=ans;
-                }
-                return ans;
-             }
+        else
+        {
+        for(int i=3; i<=nth; i++)
+        {
+                ans=pre+cur;
+                pre=cur;
+                 cur=ans;
+        }
+        return ans;
+        }
         
 }
 int main()
