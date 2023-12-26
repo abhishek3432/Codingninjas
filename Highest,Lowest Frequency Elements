@@ -1,0 +1,54 @@
+vector<int> getFrequencies(vector<int>& v) {
+
+    // Write Your Code Here
+
+    int maxFre=0;
+
+    int minFre=v.size();
+
+    int maxEle=0;
+
+    int minEle=0;
+
+    int cnt=0;
+
+    vector<int>ans;
+
+    map<int,int> mpp;
+
+    for(int i=0;i<v.size();i++){
+
+        mpp[v[i]]++;
+
+    }
+
+    for(auto it:mpp){
+
+        int cnt=it.second;
+
+        int element=it.first;
+
+        if(maxFre<cnt){
+
+        maxEle=element;
+
+        maxFre=cnt;
+
+    }
+
+    if(minFre>cnt){
+
+        minFre=cnt;
+
+        minEle=element;
+
+    }
+
+    }
+
+    ans.push_back(maxEle);
+
+    ans.push_back(minEle);
+
+    return ans;
+}
