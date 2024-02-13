@@ -1,0 +1,41 @@
+int main(){
+
+ 
+
+     int n;
+
+     cin>>n;
+
+     int space=n-1;
+
+     int times=1;
+
+     int loop=n;
+
+     while(loop--)
+
+     {
+
+         for(int i=0; i<space; i++)
+
+         cout<<" ";
+
+ 
+
+         for(int i=0; i<times; i++)
+
+         cout<<"*";
+
+         cout<<endl;
+
+         space--;
+
+         times=times+2;
+
+ 
+
+     }
+
+  
+
+}
