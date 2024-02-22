@@ -1,0 +1,47 @@
+/*
+    Time Complexity: O(log(n))
+    Space Complexity: O(1)
+
+    Where 'n' is the given number.
+*/
+
+// Function to find the square root of 'n'
+int floorSqrt(int n){
+
+    // Handle corner case
+    if(n == 0 || n == 1)
+    {
+        return n;
+    }
+
+    // Initialize variable 'low' and 'high' with lower and upper bound of answer
+    int low = 2;
+    int high = n;
+
+    // To store mid of 'low' and 'high'
+    int mid;
+
+    // Loop while 'low' is less than 'high'
+    while(low < high)
+    {
+        // Calculating 'mid'
+        mid = low + (high - low) / 2;
+
+        /*
+            If square of 'mid' is less than 'n' update 'low' else update 'high'
+            To avoid overflow we have nOT used the condition as ('mid' * 'mid' <= n)
+        */
+        if(mid <= (n / mid))
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid;
+        }
+    }
+
+    // Return 'low' - 1
+    return low - 1;
+}
+
